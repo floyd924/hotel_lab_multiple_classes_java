@@ -6,12 +6,14 @@ public class Hotel {
     private ArrayList<BedRoom> bedRoomList;
     private ArrayList<ConferenceRoom> conferenceRoomList;
     private ArrayList<DiningRoom> diningRoomList;
+    private ArrayList<Booking> bookingList;
 
     public Hotel(String name, ArrayList<BedRoom> bedRoomList, ArrayList<ConferenceRoom> conferenceRoomList, ArrayList<DiningRoom> diningRoomList){
         this.name = name;
         this.bedRoomList = bedRoomList;
         this.conferenceRoomList = conferenceRoomList;
         this.diningRoomList = diningRoomList;
+        this.bookingList = new ArrayList<>();
     }
 
     public String getName() {
@@ -50,5 +52,16 @@ public class Hotel {
             return diningRoom.removeGuest();
         }
         return null;
+    }
+
+
+    public int getNumberOfBookings() {
+        return this.bookingList.size();
+    }
+
+    public Booking bookRoom(BedRoom bedRoom, int numberOfNights) {
+        Booking newBooking = new Booking(bedRoom, numberOfNights);
+        this.bookingList.add(newBooking);
+        return  newBooking;
     }
 }

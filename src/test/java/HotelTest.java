@@ -13,7 +13,6 @@ public class HotelTest {
     DiningRoom diningRoom;
     ConferenceRoom conferenceRoom;
 
-
     @Before
     public void setup(){
         bedRoom = new BedRoom(2, 2, "Double");
@@ -76,7 +75,16 @@ public class HotelTest {
         assertEquals(0, diningRoom.numberOfGuests());
     }
 
+    @Test
+    public void hasBookingList() {
+        assertEquals(0, hotel.getNumberOfBookings());
+    }
 
+    @Test
+    public void canBookRoom() {
+        hotel.bookRoom(bedRoom, 4);
+        assertEquals(1, hotel.getNumberOfBookings());
+    }
 
 
 }
