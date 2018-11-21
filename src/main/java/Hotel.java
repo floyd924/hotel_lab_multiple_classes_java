@@ -31,4 +31,24 @@ public class Hotel {
     }
 
 
+    public Guest checkOutOfBedRoom(BedRoom bedRoom) {
+        if (bedRoom.numberOfGuests() > 0) {
+            return bedRoom.removeGuest();
+        }
+        return null;
+    }
+
+    public Guest checkOutOfConferenceRoom(ConferenceRoom conferenceRoom) {
+        if (conferenceRoom.numberOfGuests() > 0) {
+            return conferenceRoom.removeGuest();
+        }
+        return null;
+    }
+
+    public Guest checkOutOfDiningRoom(DiningRoom diningRoom) {
+        if (diningRoom.numberOfGuests() > 0) {
+            return diningRoom.removeGuest();
+        }
+        return null;
+    }
 }
