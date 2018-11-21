@@ -54,7 +54,6 @@ public class Hotel {
         return null;
     }
 
-
     public int getNumberOfBookings() {
         return this.bookingList.size();
     }
@@ -63,5 +62,11 @@ public class Hotel {
         Booking newBooking = new Booking(bedRoom, numberOfNights);
         this.bookingList.add(newBooking);
         return  newBooking;
+    }
+
+    public double getBill(Booking newBooking) {
+        double rate = newBooking.getBedRoom().getRate();
+        int numberOfNights = newBooking.getNumberOfNights();
+        return (rate * numberOfNights);
     }
 }

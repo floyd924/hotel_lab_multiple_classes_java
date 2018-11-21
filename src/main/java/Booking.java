@@ -15,4 +15,5 @@ public class Booking {
     public int getNumberOfNights() {
         return this.numberOfNights;
     }
+
 }

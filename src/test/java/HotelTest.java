@@ -15,7 +15,7 @@ public class HotelTest {
 
     @Before
     public void setup(){
-        bedRoom = new BedRoom(2, 2, "Double");
+        bedRoom = new BedRoom(2, 2, "Double", 135.17);
         ArrayList<BedRoom> bedRoomList = new ArrayList<>();
         bedRoomList.add(bedRoom);
 
@@ -86,5 +86,10 @@ public class HotelTest {
         assertEquals(1, hotel.getNumberOfBookings());
     }
 
+    @Test
+    public void canGetBill() {
+        Booking newBooking = hotel.bookRoom(bedRoom, 4);
+        assertEquals(540.68, hotel.getBill(newBooking), 0.001);
+    }
 
 }

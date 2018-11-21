@@ -6,12 +6,14 @@ public class BedRoom {
     private int capacity;
     private String type;
     private ArrayList<Guest> guestList;
+    private double rate;
 
-    public BedRoom(int number, int capacity, String type){
+    public BedRoom(int number, int capacity, String type, double rate){
         this.number = number;
         this.capacity = capacity;
         this.type = type;
         this.guestList = new ArrayList<>();
+        this.rate = rate;
     }
 
     public int getCapacity() {
@@ -33,6 +35,8 @@ public class BedRoom {
     public String getType() {
         return this.type;
     }
+
+    public double getRate() { return this.rate; }
 
     public void addGuest(Guest guest){
         if (this.numberOfGuests() < this.capacity){

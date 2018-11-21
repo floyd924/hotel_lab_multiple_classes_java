@@ -10,7 +10,7 @@ public class BookingTest {
 
     @Before
     public void setup() {
-        bedRoom = new BedRoom(3, 1, "Single");
+        bedRoom = new BedRoom(3, 1, "Single", 99.99);
         booking = new Booking(bedRoom, 2);
     }
 
